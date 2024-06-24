@@ -1,0 +1,1 @@
+The Console Weather Project is a command-line tool that allows users to retrieve current weather information for a specified location. This project uses an external weather API to fetch and display the latest weather data, providing a convenient and quick way to check the weather from the terminal.
