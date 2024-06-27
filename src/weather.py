@@ -1,5 +1,7 @@
 from src.api.open_weather_map import get_coordinates_by_city, get_weather_forecast
 
+from datetime import datetime
+
 
 def weather_info(city: str, date: str):
     lat, lon = get_coordinates_by_city(city or 'Івано-Франківськ')
@@ -18,13 +20,14 @@ def weather_info(city: str, date: str):
         if date not in forecast['dt_txt']:
             continue
 
+        forecast_date = forecast['dt_txt']
         weather = forecast['weather'][0]['description']
         temperature = forecast['main']['temp']
         humidity = forecast['main']['humidity']
         wind_speed = forecast['wind']['speed']
 
         forecast_result = (
-            f"\nWeather forecast for {date}:\n"
+            f"\nWeather forecast for at {forecast_date}:\n"
             f"  - Weather: {weather}\n"
             f"  - Temperature: {temperature}K\n"
             f"  - Humidity: {humidity}%\n"
