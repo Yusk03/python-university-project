@@ -1,5 +1,6 @@
 from src.api.open_weather_map import get_coordinates_by_city, get_weather_forecast
 
+
 def weather_info(city: str, date: str):
     lat, lon = get_coordinates_by_city(city or 'Івано-Франківськ')
 
